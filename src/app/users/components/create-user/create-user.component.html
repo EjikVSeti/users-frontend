@@ -1,0 +1,55 @@
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="saveUser()"
+        [nbSpinner]="usersService.isLoading$ | async">
+    <div class="card card-block">
+      <div class="card-body">
+        <div class="col-sm-12 caption">
+          <span>Name:</span>
+        </div>
+        <div class="col-sm-12 content">
+          <input type="string" class="form-control" formControlName="name"
+                 [class.form-control-danger]="isError(formGroup.controls['name'])"
+          >
+          <small class="form-text error" *ngIf="formGroup.controls['name'].touched">
+            <span *ngIf="formGroup.controls['name'].errors?.required">Value is required</span>
+          </small>
+        </div>
+
+        <div class="col-sm-12 caption">
+          <span>Surname:</span>
+        </div>
+        <div class="col-sm-12 content">
+          <input type="string" class="form-control" formControlName="surname"
+                 [class.form-control-danger]="isError(formGroup.controls['surname'])"
+          >
+          <small class="form-text error" *ngIf="formGroup.controls['surname'].touched">
+            <span *ngIf="formGroup.controls['surname'].errors?.required">Value is required</span>
+          </small>
+        </div>
+
+        <div class="col-sm-12 caption">
+          <span>Email:</span>
+        </div>
+        <div class="col-sm-12 content">
+          <input type="string" class="form-control" formControlName="email"
+                 [class.form-control-danger]="isError(formGroup.controls['email'])"
+          >
+          <small class="form-text error" *ngIf="formGroup.controls['email'].touched">
+            <span *ngIf="formGroup.controls['email'].errors?.required">Value is required</span>
+          </small>
+        </div>
+
+        <div class="buttons-holder mt-3">
+          <button [disabled]="formGroup.invalid"
+                  type="submit" class="btn btn-primary">
+            Create
+          </button>
+          <a [routerLink]="'/users'" class="ml-3">
+            <button type="button" class="btn btn-secondary">Cancel</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>

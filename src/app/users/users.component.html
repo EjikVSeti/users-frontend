@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="spinner-border text-primary" role="status" *ngIf="usersService.isLoading$ | async">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="card card-block">
+    <div class="card-body">
+      <div class="text-center">
+        <button class="btn btn-primary" (click)="create($event)">Create New User</button>
+      </div>
+      <div class="card-text">
+        <span class="total-count float-right mb-1">total: {{ source?.count() || '0' }}</span>
+        <ng2-smart-table
+          [settings]="settings"
+          [source]="source"
+          (search)="onSearch($event)"
+          class="smart-table"
+        ></ng2-smart-table>
+      </div>
+      <nav aria-label="Page navigation" *ngIf="pages?.length">
+        <ul class="pagination justify-content-center">
+          <li *ngFor="let page of pages"
+              [class.smart-table__active]="page === currentPage" class="page-item hover"
+              [class.smart-table__cursor-pointer]="page !== currentPage" class="page-item hover"
+          >
+            <a class="page-link" (click)="setCurrentPage(page)">
+              {{page}}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

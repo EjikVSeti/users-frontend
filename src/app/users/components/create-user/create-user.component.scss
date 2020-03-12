@@ -1,0 +1,35 @@
+.form-control-danger {
+  border-color: red;
+}
+
+:host {
+  display: flex;
+  margin: .5rem 0;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  text-align: end;
+}
+
+.content {
+  font-weight: normal;
+}
+
+.buttons-holder {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .btn {
+    margin: 1rem 1rem 1rem 0;
+
+  }
+}
+
+

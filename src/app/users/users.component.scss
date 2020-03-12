@@ -1,0 +1,24 @@
+.smart-table {
+  display: block;
+  margin: 2rem 0 7rem;
+
+  &__remove-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+  }
+
+  &__cursor-pointer{
+    cursor: pointer;
+  }
+
+  &__active{
+    cursor: none;
+    color: aqua;
+  }
+}
+
+.fas-icon {
+  font-size: 15rem !important;
+}
