@@ -24,7 +24,7 @@
     "@nebular/eva-icons": "^4.6.0",
     "@nebular/theme": "^4.6.0",
     "angular2-toaster": "^8.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "nebular-icons": "^1.1.0",
     "ng2-completer": "^3.0.3",
